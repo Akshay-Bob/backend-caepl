@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "options_images",
+  "info": {
+    "singularName": "options-image",
+    "pluralName": "options-images",
+    "displayName": "options_image",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "options_images"
+    },
+    "optionImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "optionImgId": {
+      "type": "uid"
+    },
+    "bigImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
