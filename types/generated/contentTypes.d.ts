@@ -697,6 +697,7 @@ export interface ApiOptionsImageOptionsImage extends Schema.CollectionType {
     optionImages: Attribute.Media;
     optionImgId: Attribute.UID;
     bigImages: Attribute.Media;
+    product_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

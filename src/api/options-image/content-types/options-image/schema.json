@@ -42,6 +42,9 @@
         "videos",
         "audios"
       ]
+    },
+    "product_name": {
+      "type": "string"
     }
   }
 }
