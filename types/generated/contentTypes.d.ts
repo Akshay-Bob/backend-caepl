@@ -691,7 +691,7 @@ export interface ApiOptionsImageOptionsImage extends Schema.CollectionType {
   attributes: {
     product: Attribute.Relation<
       'api::options-image.options-image',
-      'oneToOne',
+      'manyToOne',
       'api::product.product'
     >;
     optionImages: Attribute.Media;
@@ -728,8 +728,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
   attributes: {
     product_name: Attribute.String;
-    home_product_image: Attribute.Media;
-    product_home_name: Attribute.String;
+    banner_image: Attribute.Media;
+    product_heading: Attribute.String;
     product_url: Attribute.String;
     description: Attribute.Text;
     product_big_view: Attribute.Media;
@@ -738,9 +738,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
     product_category: Attribute.Enumeration<
       ['Products', 'Photography & Retouching', 'Printing & Fabrication']
     >;
-    options_image: Attribute.Relation<
+    options_images: Attribute.Relation<
       'api::product.product',
-      'oneToOne',
+      'oneToMany',
       'api::options-image.options-image'
     >;
     createdAt: Attribute.DateTime;
