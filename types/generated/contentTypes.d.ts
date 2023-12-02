@@ -689,15 +689,33 @@ export interface ApiOptionsImageOptionsImage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    product: Attribute.Relation<
-      'api::options-image.options-image',
-      'manyToOne',
-      'api::product.product'
-    >;
-    optionImages: Attribute.Media;
-    optionImgId: Attribute.UID;
-    bigImages: Attribute.Media;
-    product_name: Attribute.String;
+    products_name: Attribute.Enumeration<
+      [
+        'Invitations',
+        'Bespoke Stationary',
+        'Books',
+        'Catalogues',
+        'Menus',
+        'Photo Albums',
+        'Packaging',
+        'Jewellery',
+        'Paintings',
+        'Sculptures & Silver',
+        'Timepieces',
+        'Automobiles',
+        'Furniture',
+        'Products',
+        'Interiors',
+        'Scanning & Retouching',
+        'Models',
+        'Short-Run Printing (Digital)',
+        'Large-format Printing (Inkjet)',
+        'Screen-printing'
+      ]
+    > &
+      Attribute.Required;
+    small_view_image: Attribute.Media;
+    options_view_images: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -738,11 +756,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     thumnail_view: Attribute.Boolean & Attribute.DefaultTo<true>;
     product_category: Attribute.Enumeration<
       ['Products', 'Photography & Retouching', 'Printing & Fabrication']
-    >;
-    options_images: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::options-image.options-image'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

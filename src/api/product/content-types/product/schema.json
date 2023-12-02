@@ -68,12 +68,6 @@
         "Photography & Retouching",
         "Printing & Fabrication"
       ]
-    },
-    "options_images": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::options-image.options-image",
-      "mappedBy": "product"
     }
   }
 }

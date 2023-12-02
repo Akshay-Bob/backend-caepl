@@ -12,39 +12,51 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "product": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product.product",
-      "inversedBy": "options_images"
+    "products_name": {
+      "type": "enumeration",
+      "enum": [
+        "Invitations",
+        "Bespoke Stationary",
+        "Books",
+        "Catalogues",
+        "Menus",
+        "Photo Albums",
+        "Packaging",
+        "Jewellery",
+        "Paintings",
+        "Sculptures & Silver",
+        "Timepieces",
+        "Automobiles",
+        "Furniture",
+        "Products",
+        "Interiors",
+        "Scanning & Retouching",
+        "Models",
+        "Short-Run Printing (Digital)",
+        "Large-format Printing (Inkjet)",
+        "Screen-printing"
+      ],
+      "required": true
     },
-    "optionImages": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
+    "small_view_image": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "optionImgId": {
-      "type": "uid"
-    },
-    "bigImages": {
+      ],
       "type": "media",
-      "multiple": true,
-      "required": false,
+      "multiple": false
+    },
+    "options_view_images": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "product_name": {
-      "type": "string"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
