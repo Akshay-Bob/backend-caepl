@@ -7,4 +7,13 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
+  settings: {
+    parser: {
+      enabled: true,
+      multipart: true,
+      formidable: {
+        maxFileSize: 100 * 1024 * 1024, // 10MB
+      },
+    },
+  },
 });
