@@ -677,56 +677,32 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiOptionsImageOptionsImage extends Schema.CollectionType {
-  collectionName: 'options_images';
+export interface ApiCategoryCategory extends Schema.SingleType {
+  collectionName: 'categories';
   info: {
-    singularName: 'options-image';
-    pluralName: 'options-images';
-    displayName: 'options_image';
-    description: '';
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'category';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    products_url: Attribute.Enumeration<
-      [
-        'invitations',
-        'stationary',
-        'books',
-        'catalogues',
-        'menus',
-        'photo-albums',
-        'packaging',
-        'jewellery',
-        'paintings',
-        'sculptures-silver',
-        'timepieces',
-        'automobiles',
-        'furniture',
-        'products',
-        'interiors',
-        'scanning-retouching',
-        'models',
-        'short-run-printing',
-        'large-format-printing',
-        'screen-printing'
-      ]
-    > &
-      Attribute.Required;
-    small_view_image: Attribute.Media;
-    options_view_images: Attribute.Media;
+    product_category: Attribute.Enumeration<
+      ['Products', 'Photography & Retouching', 'Printing & Fabrication']
+    >;
+    prod_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::options-image.options-image',
+      'api::category.category',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::options-image.options-image',
+      'api::category.category',
       'oneToOne',
       'admin::user'
     > &
@@ -751,12 +727,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
     product_heading: Attribute.String;
     product_url: Attribute.String;
     description: Attribute.Text;
-    product_big_view: Attribute.Media;
-    home_view: Attribute.Media;
     thumnail_view: Attribute.Boolean & Attribute.DefaultTo<true>;
     product_category: Attribute.Enumeration<
       ['Products', 'Photography & Retouching', 'Printing & Fabrication']
     >;
+    final_view: Attribute.Component<'final-image.final-image', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -768,39 +743,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiProductsCategoryProductsCategory
-  extends Schema.CollectionType {
-  collectionName: 'products_categories';
-  info: {
-    singularName: 'products-category';
-    pluralName: 'products-categories';
-    displayName: 'products_category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    pro_category: Attribute.Enumeration<
-      ['Products', 'Photography & Retouching', 'Printing & Fabrication']
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::products-category.products-category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::products-category.products-category',
       'oneToOne',
       'admin::user'
     > &
@@ -824,9 +766,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::options-image.options-image': ApiOptionsImageOptionsImage;
+      'api::category.category': ApiCategoryCategory;
       'api::product.product': ApiProductProduct;
-      'api::products-category.products-category': ApiProductsCategoryProductsCategory;
     }
   }
 }

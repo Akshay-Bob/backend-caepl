@@ -35,28 +35,6 @@
     "description": {
       "type": "text"
     },
-    "product_big_view": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "home_view": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "thumnail_view": {
       "type": "boolean",
       "default": true,
@@ -70,11 +48,10 @@
         "Printing & Fabrication"
       ]
     },
-    "options_images": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::options-image.options-image",
-      "mappedBy": "product"
+    "final_view": {
+      "type": "component",
+      "repeatable": true,
+      "component": "final-image.final-image"
     }
   }
 }

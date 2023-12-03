@@ -1,23 +1,26 @@
 {
-  "kind": "collectionType",
-  "collectionName": "products_categories",
+  "kind": "singleType",
+  "collectionName": "categories",
   "info": {
-    "singularName": "products-category",
-    "pluralName": "products-categories",
-    "displayName": "products_category"
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "category"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "pro_category": {
+    "product_category": {
       "type": "enumeration",
       "enum": [
         "Products",
         "Photography & Retouching",
         "Printing & Fabrication"
       ]
+    },
+    "prod_name": {
+      "type": "string"
     }
   }
 }
