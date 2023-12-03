@@ -59,7 +59,8 @@
     },
     "thumnail_view": {
       "type": "boolean",
-      "default": true
+      "default": true,
+      "required": false
     },
     "product_category": {
       "type": "enumeration",
@@ -68,6 +69,12 @@
         "Photography & Retouching",
         "Printing & Fabrication"
       ]
+    },
+    "options_images": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::options-image.options-image",
+      "mappedBy": "product"
     }
   }
 }
