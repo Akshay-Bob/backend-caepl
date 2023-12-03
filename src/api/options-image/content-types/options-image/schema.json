@@ -12,51 +12,53 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "products_name": {
+    "products_url": {
       "type": "enumeration",
       "enum": [
-        "Invitations",
-        "Bespoke Stationary",
-        "Books",
-        "Catalogues",
-        "Menus",
-        "Photo Albums",
-        "Packaging",
-        "Jewellery",
-        "Paintings",
-        "Sculptures & Silver",
-        "Timepieces",
-        "Automobiles",
-        "Furniture",
-        "Products",
-        "Interiors",
-        "Scanning & Retouching",
-        "Models",
-        "Short-Run Printing (Digital)",
-        "Large-format Printing (Inkjet)",
-        "Screen-printing"
+        "invitations",
+        "stationary",
+        "books",
+        "catalogues",
+        "menus",
+        "photo-albums",
+        "packaging",
+        "jewellery",
+        "paintings",
+        "sculptures-silver",
+        "timepieces",
+        "automobiles",
+        "furniture",
+        "products",
+        "interiors",
+        "scanning-retouching",
+        "models",
+        "short-run-printing",
+        "large-format-printing",
+        "screen-printing"
       ],
       "required": true
     },
     "small_view_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "options_view_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

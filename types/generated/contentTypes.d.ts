@@ -689,28 +689,28 @@ export interface ApiOptionsImageOptionsImage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    products_name: Attribute.Enumeration<
+    products_url: Attribute.Enumeration<
       [
-        'Invitations',
-        'Bespoke Stationary',
-        'Books',
-        'Catalogues',
-        'Menus',
-        'Photo Albums',
-        'Packaging',
-        'Jewellery',
-        'Paintings',
-        'Sculptures & Silver',
-        'Timepieces',
-        'Automobiles',
-        'Furniture',
-        'Products',
-        'Interiors',
-        'Scanning & Retouching',
-        'Models',
-        'Short-Run Printing (Digital)',
-        'Large-format Printing (Inkjet)',
-        'Screen-printing'
+        'invitations',
+        'stationary',
+        'books',
+        'catalogues',
+        'menus',
+        'photo-albums',
+        'packaging',
+        'jewellery',
+        'paintings',
+        'sculptures-silver',
+        'timepieces',
+        'automobiles',
+        'furniture',
+        'products',
+        'interiors',
+        'scanning-retouching',
+        'models',
+        'short-run-printing',
+        'large-format-printing',
+        'screen-printing'
       ]
     > &
       Attribute.Required;
